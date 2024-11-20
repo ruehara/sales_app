@@ -1,0 +1,9 @@
+import '../helpers/converters.dart';
+
+CREATE TABLE tafteste (
+    id INTEGER NOT NULL PRIMARY KEY,
+    name TEXT NOT NULL,
+    biography TEXT,
+    preferences TEXT MAPPED BY `const StringConverter(40)`,
+    profile_picture BLOB
+) as Teste;

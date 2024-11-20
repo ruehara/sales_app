@@ -1,0 +1,9 @@
+import '../helpers/converters.dart';
+
+CREATE TABLE tafperfil (
+    CDPRFL TEXT NOT NULL ,
+    DSPRFL TEXT NOT NULL MAPPED BY `const StringConverter(50)`,
+    IDREST TEXT NOT NULL ,
+    IDPERF TEXT NOT NULL ,
+    PRIMARY KEY (CDPRFL)
+) as Perfil;

@@ -1,0 +1,9 @@
+CREATE TABLE tafcolors (
+    id TEXT NOT NULL PRIMARY KEY,
+    alpha INTEGER NOT NULL,
+    red INTEGER NOT NULL,
+    green INTEGER NOT NULL,
+    blue INTEGER NOT NULL
+) as Color;
+
+customColors: SELECT * FROM tafcolors;

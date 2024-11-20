@@ -1,0 +1,9 @@
+import 'tafperfil.drift';
+import '../helpers/converters.dart';
+
+CREATE TABLE taffiguraperfil (
+    CDFIGU TEXT NOT NULL,
+    CDPRFL TEXT NOT NULL,
+    PRIMARY KEY (CDFIGU, CDPRFL),
+    FOREIGN KEY (CDPRFL) REFERENCES TAFPERFIL (CDPRFL)
+) as FiguraPerfil;
