@@ -7,11 +7,9 @@ import 'language_events.dart';
 import 'language_state.dart';
 
 class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
-  LanguageBloc() : super(_initialState() as LanguageState) {
-    _initialize();
-  }
-
-  void _initialize() async {
+  LanguageBloc()
+      : super(InitialLanguageState(
+            locale: getIt<AppSharedPreferences>().getLocale())) {
     on<PortugueseChangeEvent>((event, emit) async {
       emit(const PortugueseLanguageState(locale: AppLanguage.portuguese));
       getIt<AppSharedPreferences>().setLocale(AppLanguage.portuguese);
@@ -26,10 +24,5 @@ class LanguageBloc extends Bloc<LanguageEvent, LanguageState> {
       emit(const SpanishLanguageState(locale: AppLanguage.spanish));
       getIt<AppSharedPreferences>().setLocale(AppLanguage.spanish);
     });
-  }
-
-  static Future<LanguageState> _initialState() async {
-    final locale = await getIt<AppSharedPreferences>().getLocale();
-    return InitialLanguageState(locale: locale);
   }
 }
