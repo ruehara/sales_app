@@ -42,28 +42,16 @@ class App extends StatelessWidget {
       builder: (context, themeState) {
         return BlocBuilder<LanguageBloc, LanguageState>(
           builder: (context, languageState) {
-            return FutureBuilder<ThemeData>(
-              future: AppTheme.lightTheme,
-              builder: (context, snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return const CircularProgressIndicator();
-                } else if (snapshot.hasError) {
-                  return Text('Error: ${snapshot.error}');
-                } else {
-                  return MaterialApp.router(
-                    scrollBehavior: CustomScrollBehavior(),
-                    locale: context.language.state.locale,
-                    debugShowCheckedModeBanner: false,
-                    localizationsDelegates:
-                        AppLocalizations.localizationsDelegates,
-                    supportedLocales: AppLocalizations.supportedLocales,
-                    routerConfig: router,
-                    theme: snapshot.data,
-                    darkTheme: AppTheme.darkTheme,
-                    themeMode: context.theme.state.themeMode,
-                  );
-                }
-              },
+            return MaterialApp.router(
+              scrollBehavior: CustomScrollBehavior(),
+              locale: context.language.state.locale,
+              debugShowCheckedModeBanner: false,
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              supportedLocales: AppLocalizations.supportedLocales,
+              routerConfig: router,
+              theme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
+              themeMode: context.theme.state.themeMode,
             );
           },
         );

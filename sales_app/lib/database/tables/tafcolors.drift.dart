@@ -1,6 +1,6 @@
 // ignore_for_file: type=lint
 import 'package:drift/drift.dart' as i0;
-import 'package:sales_app/database/tables/tafcores.drift.dart' as i1;
+import 'package:sales_app/database/tables/tafcolors.drift.dart' as i1;
 import 'package:drift/internal/modular.dart' as i2;
 
 typedef $TafcolorsCreateCompanionBuilder = i1.TafcolorsCompanion Function({
@@ -479,8 +479,8 @@ class TafcolorsCompanion extends i0.UpdateCompanion<i1.Color> {
   }
 }
 
-class TafcoresDrift extends i2.ModularAccessor {
-  TafcoresDrift(i0.GeneratedDatabase db) : super(db);
+class TafcolorsDrift extends i2.ModularAccessor {
+  TafcolorsDrift(i0.GeneratedDatabase db) : super(db);
   i0.Selectable<i1.Color> customColors() {
     return customSelect('SELECT * FROM tafcolors', variables: [], readsFrom: {
       tafcolors,

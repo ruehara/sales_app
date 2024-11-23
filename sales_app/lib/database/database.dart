@@ -1,10 +1,10 @@
 import 'package:drift/drift.dart';
+import 'package:sales_app/database/tables/tafcolors.drift.dart';
 
 import 'accessor.dart';
 import 'connection/connection.dart';
 import 'database.drift.dart';
 import 'include_tables.dart';
-import 'tables/tafcores.drift.dart';
 
 @DriftDatabase(
   include: tables,
