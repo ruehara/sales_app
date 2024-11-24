@@ -4,7 +4,6 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'injection.dart';
-
 import '../services/maintenance/maintenance.dart';
 
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {

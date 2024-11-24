@@ -109,21 +109,21 @@ class _TestViewState extends State<TestView> with WidgetsBindingObserver {
                       },
                       child: Text(context.l10n.execute_maintenance),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: () {
                         context.theme.add(ThemeChangeEvent());
                       },
                       child: Text(context.l10n.theme),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     ElevatedButton(
                       onPressed: () {
                         context.pushNamed('teste');
                       },
                       child: Text(context.l10n.detail_title),
                     ),
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
                     ToggleButtons(
                       direction: Axis.horizontal,
                       onPressed: (int index) {
