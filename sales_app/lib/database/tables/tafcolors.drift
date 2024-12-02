@@ -4,6 +4,6 @@ CREATE TABLE tafcolors (
     red INTEGER NOT NULL,
     green INTEGER NOT NULL,
     blue INTEGER NOT NULL
-) as Color;
+);
 
 customColors: SELECT * FROM tafcolors;

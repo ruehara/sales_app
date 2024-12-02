@@ -1,6 +1,7 @@
 import 'dart:io';
-import 'package:path/path.dart' as path;
+import 'package:path/path.dart' as p;
 import 'package:flutter/foundation.dart';
+import 'package:path_provider/path_provider.dart';
 
 /// Stores the locale variable in shared preferences
 const localeVar = 'locale';
@@ -28,8 +29,18 @@ const filesDir = 'files';
 /// Stores the Images
 const imagesDir = 'images';
 
+/// Stores the debug windows path
 const debugWindowsPath = 'build\\windows\\x64\\runner\\Debug';
 
-String appPath = kDebugMode && Platform.isWindows
-    ? path.join(Directory.current.path, debugWindowsPath)
-    : Directory.current.path;
+/// Returns the app path
+Future<String> get appPath async {
+  if (Platform.isWindows) {
+    if (kDebugMode) {
+      return p.join(Directory.current.path, debugWindowsPath);
+    } else {
+      return Directory.current.path;
+    }
+  }
+  var directory = await getApplicationDocumentsDirectory();
+  return directory.path;
+}

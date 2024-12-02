@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sales_app/core/app_init/bootstrap.dart';
@@ -12,6 +13,9 @@ import 'shared/utils/scroll.dart';
 
 void main() {
   bootstrap(() => const MyApp());
+  if (kDebugMode) {
+    print(const String.fromEnvironment('API_KEY'));
+  }
 }
 
 class MyApp extends StatelessWidget {

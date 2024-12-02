@@ -124,6 +124,20 @@ class _TestViewState extends State<TestView> with WidgetsBindingObserver {
                       child: Text(context.l10n.detail_title),
                     ),
                     const SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        context.pushNamed('image_picker');
+                      },
+                      child: Text('Image Picker'),
+                    ),
+                    const SizedBox(height: 10),
+                    ElevatedButton(
+                      onPressed: () {
+                        context.pushNamed('file_picker');
+                      },
+                      child: Text('File Picker'),
+                    ),
+                    const SizedBox(height: 10),
                     ToggleButtons(
                       direction: Axis.horizontal,
                       onPressed: (int index) {

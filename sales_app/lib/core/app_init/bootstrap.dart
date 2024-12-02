@@ -26,8 +26,8 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
 
       // Add cross-flavor configuration here
 
-      await Maintenance.run();
       await loadServiceLocator();
+      await Maintenance.run();
 
       runApp(await builder());
     },

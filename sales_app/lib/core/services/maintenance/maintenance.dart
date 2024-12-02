@@ -1,6 +1,8 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
+import 'package:get_it/get_it.dart';
 import 'package:path/path.dart' as p;
+import '../../../database/database.dart';
 import '../../../shared/utils/constants.dart';
 
 class Maintenance {
@@ -21,9 +23,11 @@ class Maintenance {
   }
 
   static createFolders() async {
-    await Directory(p.join(appPath, filesDir)).create(recursive: true);
-    await Directory(p.join(appPath, imagesDir)).create(recursive: true);
-    await Directory(p.join(appPath, logDir)).create(recursive: true);
+    var appDirectory = await appPath;
+    await Directory(p.join(appDirectory, filesDir)).create(recursive: true);
+    await Directory(p.join(appDirectory, imagesDir)).create(recursive: true);
+    await Directory(p.join(appDirectory, logDir)).create(recursive: true);
+    await Directory(p.join(appDirectory, databaseDir)).create(recursive: true);
   }
 
   static deleteOldFiles() async {
@@ -31,7 +35,8 @@ class Maintenance {
   }
 
   static deleteOldLogs() async {
-    // Add your code to delete old logs
+    final Database db = GetIt.instance<Database>();
+    await db.select(db.tafcolors).get();
   }
 
   static deleteOldImages() async {
