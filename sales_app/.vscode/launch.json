@@ -26,7 +26,18 @@
         "--target", "lib/main.dart",
         "--dart-define-from-file","C:\\Config\\config_qa.json"
       ]
-    }
+    },
+    {
+      "name": "HML",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--flavor", "staging", 
+        "--target", "lib/main.dart",
+        "--dart-define-from-file","C:\\Config\\config_hml.json"
+      ]
+    },
     // ,{
     //   "name": "PROD",
     //   "request": "launch",
