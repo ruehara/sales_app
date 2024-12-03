@@ -15,7 +15,7 @@ import '../../../core/services/language/app_languages.dart';
 import '../../../core/services/language/language_events.dart';
 import '../../../core/services/maintenance/maintenance.dart';
 import '../../../core/services/theme/theme_events.dart';
-import '../../../shared/widgets/exit_dalog.dart';
+import '../../../shared/widgets/exit_dialog.dart';
 
 class TestPage extends StatelessWidget {
   const TestPage({super.key});
@@ -53,7 +53,7 @@ class _TestViewState extends State<TestView> with WidgetsBindingObserver {
   Future<AppExitResponse> didRequestAppExit() async {
     AppExitResponse response = AppExitResponse.cancel;
     if (context.mounted) {
-      response = await ExitPopupDialog.show(context).then(
+      response = await ExitDialog.show(context).then(
           (value) => value ? AppExitResponse.exit : AppExitResponse.cancel);
     }
     if (response == AppExitResponse.cancel) {
@@ -65,8 +65,8 @@ class _TestViewState extends State<TestView> with WidgetsBindingObserver {
 
   Future<bool> exitApp() async {
     if (!context.canPop()) {
-      bool ret = await ExitPopupDialog.show(context)
-          .then((value) => value ? true : false);
+      bool ret =
+          await ExitDialog.show(context).then((value) => value ? true : false);
       if (ret) {
         SystemNavigator.pop();
       }
@@ -88,7 +88,7 @@ class _TestViewState extends State<TestView> with WidgetsBindingObserver {
         if (didPop) {
           return;
         }
-        final bool shouldPop = await ExitPopupDialog.show(context) ?? false;
+        final bool shouldPop = await ExitDialog.show(context) ?? false;
         if (context.mounted && shouldPop) {
           SystemNavigator.pop();
         }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:sales_app/l10n/l10n.dart';
 
-class ExitPopupDialog {
-  ExitPopupDialog._();
+class ExitDialog {
+  static bool _isDialogShowing = false;
 
   static show(BuildContext context) {
+    if (_isDialogShowing) return;
+    _isDialogShowing = true;
     return showDialog(
       context: context,
       barrierDismissible: false,
@@ -14,11 +16,17 @@ class ExitPopupDialog {
           content: Text(context.l10n.exit_msg),
           actions: [
             ElevatedButton(
-              onPressed: () => Navigator.of(context).pop(false),
+              onPressed: () {
+                _isDialogShowing = false;
+                Navigator.of(context).pop(false);
+              },
               child: Text(context.l10n.no),
             ),
             ElevatedButton(
-              onPressed: () => Navigator.of(context).pop(true),
+              onPressed: () {
+                _isDialogShowing = false;
+                Navigator.of(context).pop(true);
+              },
               child: Text(context.l10n.yes),
             ),
           ],
