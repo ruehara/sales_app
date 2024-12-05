@@ -23,5 +23,6 @@
     "spanish":"Español",
     "dark":"Oscuro",
     "light":"Claro",
-    "execute_maintenance":"Ejecutar Mantenimiento"
+    "execute_maintenance":"Ejecutar Mantenimiento",
+    "test_page" : "Página de Prueba"
 }

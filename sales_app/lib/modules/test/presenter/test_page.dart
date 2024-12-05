@@ -96,7 +96,7 @@ class _TestViewState extends State<TestView> with WidgetsBindingObserver {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-            title: Text(context.l10n.auth_page),
+            title: Text(context.l10n.test_page),
           ),
           body: BlocBuilder<ThemeBloc, ThemeState>(
             builder: (context, state) {
@@ -115,13 +115,6 @@ class _TestViewState extends State<TestView> with WidgetsBindingObserver {
                         context.theme.add(ThemeChangeEvent());
                       },
                       child: Text(context.l10n.theme),
-                    ),
-                    const SizedBox(height: 10),
-                    ElevatedButton(
-                      onPressed: () {
-                        context.pushNamed('teste');
-                      },
-                      child: Text(context.l10n.detail_title),
                     ),
                     const SizedBox(height: 10),
                     ElevatedButton(

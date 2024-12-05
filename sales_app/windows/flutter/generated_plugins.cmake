@@ -3,6 +3,7 @@
 #
 
 list(APPEND FLUTTER_PLUGIN_LIST
+  bluetooth_low_energy_windows
   file_selector_windows
   geolocator_windows
   sqlite3_flutter_libs

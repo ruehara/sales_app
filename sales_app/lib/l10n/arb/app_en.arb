@@ -23,5 +23,6 @@
     "spanish":"Spanish",
     "dark":"Dark",
     "light":"Light",
-    "execute_maintenance":"Execute Maintenance"
+    "execute_maintenance":"Execute Maintenance",
+    "test_page" : "Test Page"
 }

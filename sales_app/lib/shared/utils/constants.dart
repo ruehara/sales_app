@@ -18,16 +18,16 @@ const databaseName = 'database.db';
 const logbase = 'logbase.db';
 
 /// Stores the database folder
-const databaseDir = 'database';
+const databaseDir = 'Database';
 
 /// Stores the log folder
-const logDir = 'log';
+const logDir = 'Log';
 
 /// Stores the Files
-const filesDir = 'files';
+const filesDir = 'Files';
 
-/// Stores the Images
-const imagesDir = 'images';
+/// Stores the Media Files
+const mediaDir = 'Media';
 
 /// Stores the debug windows path
 const debugWindowsPath = 'build\\windows\\x64\\runner\\Debug';
