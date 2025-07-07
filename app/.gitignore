@@ -14,7 +14,7 @@ migrate_working_dir/
 *.iml
 *.ipr
 *.iws
-**/.idea/*
+.idea/*
 
 # Visual Studio Code related
 .classpath
@@ -28,12 +28,12 @@ migrate_working_dir/
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
-**/.dart_tool/
+.dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
 .packages
 .pub-cache/
-**/.pub/
+.pub/
 build/
 flutter_*.png
 linked_*.ds
@@ -106,7 +106,6 @@ app.*.map.json
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 !/dev/ci/**/Gemfile.lock
 !.vscode/extensions.json
-!.vscode/settings.json
 !.vscode/launch.json
 !.idea/codeStyles/
 !.idea/dictionaries/
