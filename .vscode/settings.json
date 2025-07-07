@@ -17,6 +17,7 @@
         "**/linux/": true,
         "**/generated/": true,
         "**/analysis_options.yaml": true,
+        "**/coverage_badge.svg": true,
     },
     "editor.codeActionsOnSave": {
         "source.fixAll": "explicit"
