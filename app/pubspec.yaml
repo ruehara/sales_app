@@ -7,16 +7,24 @@ environment:
   sdk: ^3.8.1
 
 dependencies:
-  bloc: ^9.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^9.1.1
-  flutter_localizations:
-    sdk: flutter
-  intl: ^0.20.2
+  go_router: ^16.0.0
+  get_it: ^8.0.3
 
+
+  # Local packages
+  theme_package:
+    path: ../packages/theme_package
+  language_package:
+    path: ../packages/language_package
+  shared_preference_package:
+    path: ../packages/shared_preference_package
+  logging_package:
+    path: ../packages/logging_package
+    
 dev_dependencies:
-  flutter_lints: ^6.0.0
   bloc_test: ^10.0.0
   flutter_test:
     sdk: flutter

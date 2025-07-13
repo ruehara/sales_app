@@ -1,0 +1,32 @@
+{
+    "@@locale": "es",
+    "language": "Español",
+    "counterAppBarTitle": "Contador",
+    "@counterAppBarTitle": {
+        "description": "Texto que se muestra en la AppBar de la página del contador.",
+        "hint": "Título de la AppBar del contador"
+    },
+    "counterInfo": "El valor está en:",
+    "reset": "Restablecer los valores",
+    "change_language": "Cambia el idioma",
+    "theme": "Cambiar el tema",
+    "increment": "Incremento",
+    "decrement": "Disminuir",
+    "exit": "Salir de la aplicación",
+    "exit_msg": "¿Realmente quieres salir de la aplicación?",
+    "yes": "Sí",
+    "no": "No",
+    "list_title": "Lista de ejemplo",
+    "detail_title": "Detalle",
+    "auth_page": "Página de Autenticación",
+    "portuguese": "Portugués",
+    "english": "Inglés",
+    "spanish": "Español",
+    "dark": "Oscuro",
+    "light": "Claro",
+    "execute_maintenance": "Ejecutar Mantenimiento",
+    "test_page": "Página de Prueba",
+    "helloWorld": "Hola Mundo",
+    "greeting": "¡Bienvenido, {firstName}!",
+    "not_found": "No encontrado"
+}

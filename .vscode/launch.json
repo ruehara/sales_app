@@ -13,11 +13,13 @@
         "--flavor",
         "development",
         "--target",
-        "lib/main.dart"
+        "lib/main.dart",
+        "--dart-define-from-file",
+        "C:\\Config\\config_dev.json"
       ]
     },
     {
-      "name": "HML",
+      "name": "QA",
       "request": "launch",
       "type": "dart",
       "program": "app/lib/main.dart",

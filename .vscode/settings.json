@@ -16,7 +16,6 @@
         "**/windows/": true,
         "**/linux/": true,
         "**/generated/": true,
-        "**/analysis_options.yaml": true,
         "**/coverage_badge.svg": true,
     },
     "editor.codeActionsOnSave": {
@@ -25,5 +24,9 @@
     "editor.formatOnSave": true,
     "files.associations": {
         "*.arb": "json"
-    }
+    },
+    "java.compile.nullAnalysis.mode": "automatic",
+    "arb-editor.suppressedWarnings": [
+        "missing_metadata_for_key",
+    ],
 }

@@ -1,0 +1,32 @@
+{
+    "@@locale": "en",
+    "language": "English",
+    "counterAppBarTitle": "Counter",
+    "@counterAppBarTitle": {
+        "description": "Text shown in the AppBar of the Counter Page",
+        "hint": "Counter AppBar Title"
+    },
+    "counterInfo": "The value is at:",
+    "reset": "Reset values",
+    "change_language": "Change the language",
+    "theme": "Change the theme",
+    "increment": "Increment",
+    "decrement": "Decrement",
+    "exit": "Exit the App",
+    "exit_msg": "Do you want to exit the App?",
+    "yes": "Yes",
+    "no": "No",
+    "list_title": "List Example",
+    "detail_title": "Detail",
+    "auth_page": "Authentication Page",
+    "portuguese": "Portuguese",
+    "english": "English",
+    "spanish": "Spanish",
+    "dark": "Dark",
+    "light": "Light",
+    "execute_maintenance": "Execute Maintenance",
+    "test_page": "Test Page",
+    "helloWorld": "Hello World",
+    "greeting": "Welcome, {firstName}!",
+    "not_found": "Not Found"
+}
