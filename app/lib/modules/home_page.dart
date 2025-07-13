@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                               const SizedBox(height: 8),
                               Text(
                                 localizations.greeting(
-                                  '${languageState.currentLanguage.flag} ${languageState.currentLanguage.name}',
+                                  '${languageState.currentLanguage.name}',
                                 ),
                                 style: Theme.of(context).textTheme.bodyLarge,
                               ),
@@ -66,7 +66,6 @@ class HomePage extends StatelessWidget {
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Icon(themeState.currentTheme.icon),
                                   const SizedBox(width: 8),
                                   Text(
                                     'Current theme: ${themeState.currentTheme.name}',

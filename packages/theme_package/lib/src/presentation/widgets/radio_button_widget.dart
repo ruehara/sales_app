@@ -18,11 +18,7 @@ Widget buildThemeRadioButtons(
           dense: true,
           title: Row(
             mainAxisSize: MainAxisSize.min,
-            children: [
-              Icon(theme.icon, size: 20),
-              const SizedBox(width: 8),
-              Text(theme.name),
-            ],
+            children: [const SizedBox(width: 8), Text(theme.name)],
           ),
           value: theme.type,
           groupValue: currentTheme.type,

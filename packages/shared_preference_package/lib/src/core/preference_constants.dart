@@ -5,7 +5,7 @@ class PreferenceConstants {
 
   // Default values
   static const String defaultTheme = 'system';
-  static const String defaultLanguage = 'pt';
+  static const String defaultLanguage = 'pt_BR';
 
   // Helper methods
   static List<String> get allKeys => [emailKey, themeKey, languageKey];

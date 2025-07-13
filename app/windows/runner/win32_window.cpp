@@ -116,8 +116,11 @@ bool Win32Window::CreateAndShow(const std::wstring& title,
   UINT dpi = FlutterDesktopGetDpiForMonitor(monitor);
   double scale_factor = dpi / 96.0;
 
-  HWND window = CreateWindow(
-      window_class, title.c_str(), WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+ HWND window = CreateWindowEx(
+      WS_EX_TOPMOST,
+      window_class, 
+      title.c_str(), 
+      WS_OVERLAPPEDWINDOW | WS_VISIBLE,
       Scale(origin.x, scale_factor), Scale(origin.y, scale_factor),
       Scale(size.width, scale_factor), Scale(size.height, scale_factor),
       nullptr, nullptr, GetModuleHandle(nullptr), this);
@@ -188,6 +191,18 @@ Win32Window::MessageHandler(HWND hwnd,
         SetFocus(child_content_);
       }
       return 0;
+    
+    case WM_GETMINMAXINFO:
+    {
+      MINMAXINFO *info = reinterpret_cast<MINMAXINFO *>(lparam);
+      if (child_content_ != nullptr)
+      {
+        info->ptMinTrackSize.x = 350;
+        info->ptMinTrackSize.y = 600;
+      }
+      return 0;
+    }
+    
   }
 
   return DefWindowProc(window_handle_, message, wparam, lparam);

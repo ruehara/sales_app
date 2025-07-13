@@ -19,10 +19,12 @@ class LanguageRepositoryImpl implements LanguageRepository {
 
   @override
   Future<void> changeLanguage(LanguageEntity language) async {
-    if (LanguageConstants.isSupported(language.code)) {
-      await _preferenceRepository.saveLanguage(language.code);
+    if (LanguageConstants.isSupported(language.locale.languageCode)) {
+      await _preferenceRepository.saveLanguage(language.locale.languageCode);
     } else {
-      throw ArgumentError('Unsupported language: ${language.code}');
+      throw ArgumentError(
+        'Unsupported language: ${language.locale.languageCode}',
+      );
     }
   }
 

@@ -14,7 +14,7 @@ Widget buildThemeToggleButtons(
       ToggleButtons(
         direction: Axis.horizontal,
         borderRadius: const BorderRadius.all(Radius.circular(8)),
-        constraints: const BoxConstraints(minHeight: 30.0, minWidth: 110.0),
+        constraints: const BoxConstraints(minHeight: 25.0, minWidth: 85.0),
         onPressed: (int index) {
           final selectedTheme = themes[index];
           BlocProvider.of<ThemeBloc>(

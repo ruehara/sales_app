@@ -17,8 +17,8 @@ Widget buildRadioButtons(
         return RadioListTile<String>(
           dense: true,
           title: Text(language.name),
-          value: language.code,
-          groupValue: currentLanguage.code,
+          value: language.locale.languageCode,
+          groupValue: currentLanguage.locale.languageCode,
           onChanged: (String? value) {
             if (value != null) {
               final selectedLanguage = LanguageEntity.fromCode(value);

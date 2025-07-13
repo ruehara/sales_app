@@ -20,11 +20,7 @@ Widget buildThemeDropDown(
     dropdownMenuEntries: themes.map<DropdownMenuEntry<String>>((
       ThemeEntity theme,
     ) {
-      return DropdownMenuEntry<String>(
-        value: theme.type,
-        label: theme.name,
-        leadingIcon: Icon(theme.icon),
-      );
+      return DropdownMenuEntry<String>(value: theme.type, label: theme.name);
     }).toList(),
   );
 }

@@ -2,29 +2,16 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 
 class ThemeEntity extends Equatable {
-  const ThemeEntity({
-    required this.type,
-    required this.name,
-    required this.icon,
-  });
+  const ThemeEntity({required this.type, required this.name});
 
   final String type;
   final String name;
-  final IconData icon;
 
   static List<ThemeEntity> get supportedThemes {
     return [
-      const ThemeEntity(type: 'light', name: 'Light', icon: Icons.wb_sunny),
-      const ThemeEntity(
-        type: 'dark',
-        name: 'Dark',
-        icon: Icons.nightlight_round,
-      ),
-      const ThemeEntity(
-        type: 'system',
-        name: 'System Default',
-        icon: Icons.settings_system_daydream,
-      ),
+      const ThemeEntity(type: 'light', name: 'Light'),
+      const ThemeEntity(type: 'dark', name: 'Dark'),
+      const ThemeEntity(type: 'system', name: 'System'),
     ];
   }
 
@@ -46,5 +33,5 @@ class ThemeEntity extends Equatable {
   }
 
   @override
-  List<Object?> get props => [type, name, icon];
+  List<Object?> get props => [type, name];
 }

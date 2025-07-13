@@ -10,7 +10,7 @@ Widget buildDropDown(
 ) {
   return DropdownMenu<String>(
     enableSearch: false,
-    initialSelection: currentLanguage.code,
+    initialSelection: currentLanguage.locale.languageCode,
     onSelected: (String? languageCode) {
       if (languageCode != null) {
         final language = LanguageEntity.fromCode(languageCode);
@@ -23,7 +23,7 @@ Widget buildDropDown(
       LanguageEntity language,
     ) {
       return DropdownMenuEntry<String>(
-        value: language.code,
+        value: language.locale.languageCode,
         label: language.name,
       );
     }).toList(),

@@ -50,7 +50,7 @@ extension StringValidationX on String {
   }
 
   bool get isValidLanguage {
-    const validLanguages = ['en', 'es', 'pt'];
+    const validLanguages = ['en_US', 'es_ES', 'pt_BR'];
     return validLanguages.contains(toLowerCase());
   }
 }
