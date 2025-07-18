@@ -13,7 +13,7 @@
         "**/ios/": true,
         "**/web/": true,
         "**/macos/": true,
-        "**/windows/": false,
+        "**/windows/": true,
         "**/linux/": true,
         "**/generated/": true,
         "**/coverage_badge.svg": true,

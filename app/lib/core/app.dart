@@ -1,3 +1,4 @@
+import 'package:app/utils/custom_scroll.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -50,6 +51,7 @@ class _AppBuilder extends StatelessWidget {
             return MaterialApp(
               locale: currentLocale,
               themeMode: currentThemeMode,
+              scrollBehavior: MyCustomScrollBehavior(),
               theme: AppThemes.lightTheme,
               darkTheme: AppThemes.darkTheme,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
