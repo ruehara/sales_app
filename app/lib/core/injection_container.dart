@@ -1,33 +1,27 @@
+import 'package:get_it/get_it.dart';
 import 'package:language_package/language_package.dart';
 import 'package:logging_package/logging_package.dart';
-import 'package:shared_preference_package/shared_preference_package.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:theme_package/theme_package.dart';
 
 class InjectionContainer {
   static Future<void> init() async {
-    // Initialize shared preference package first
-    await PreferenceInjection.init();
-
-    // Then initialize language package (will not re-register shared preferences)
+    // Initialize packages
     await LanguageInjection.init();
-
-    // Then initialize theme package (will not re-register shared preferences)
     await ThemeInjection.init();
-
-    // Initialize logging package
     await LogInjection.init();
   }
 
   static void reset() {
-    // Reset in reverse order, but don't reset shared preferences multiple times
+    final sl = GetIt.instance;
+    // Reset in reverse order
     LogInjection.reset();
-
     ThemeInjection.reset();
-
-    // Reset in reverse order, but don't reset shared preferences multiple times
     LanguageInjection.reset();
 
-    // Reset shared preference package last, after all dependent packages
-    PreferenceInjection.reset();
+    // Reset shared dependencies if they exist
+    if (sl.isRegistered<SharedPreferences>()) {
+      sl.unregister<SharedPreferences>();
+    }
   }
 }

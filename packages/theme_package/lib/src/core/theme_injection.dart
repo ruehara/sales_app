@@ -1,13 +1,10 @@
 import 'package:get_it/get_it.dart';
-import 'package:shared_preference_package/shared_preference_package.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../theme_package.dart';
 
 class ThemeInjection {
   static Future<void> init() async {
     final sl = GetIt.instance;
-
-    // Initialize shared preference package first
-    await PreferenceInjection.init();
 
     // Helper function to reduce boilerplate
     void registerIfAbsent<T extends Object>(T Function() factory) {
@@ -16,9 +13,15 @@ class ThemeInjection {
       }
     }
 
+    // External Dependencies
+    if (!sl.isRegistered<SharedPreferences>()) {
+      final sharedPreferences = await SharedPreferences.getInstance();
+      sl.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
+    }
+
     // Repositories
     registerIfAbsent<ThemeRepository>(
-      () => ThemeRepositoryImpl(sl<PreferenceRepository>()),
+      () => ThemeRepositoryImpl(sl<SharedPreferences>()),
     );
 
     // Use Cases

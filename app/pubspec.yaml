@@ -19,8 +19,6 @@ dependencies:
     path: ../packages/theme_package
   language_package:
     path: ../packages/language_package
-  shared_preference_package:
-    path: ../packages/shared_preference_package
   logging_package:
     path: ../packages/logging_package
     

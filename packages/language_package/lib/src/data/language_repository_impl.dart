@@ -1,14 +1,16 @@
-import 'package:shared_preference_package/shared_preference_package.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../language_package.dart';
 
 class LanguageRepositoryImpl implements LanguageRepository {
-  const LanguageRepositoryImpl(this._preferenceRepository);
+  const LanguageRepositoryImpl(this._prefs);
 
-  final PreferenceRepository _preferenceRepository;
+  final SharedPreferences _prefs;
+
+  static const String _languageKey = 'user_language';
 
   @override
   Future<LanguageEntity> getCurrentLanguage() async {
-    final savedLanguageCode = await _preferenceRepository.getLanguage();
+    final savedLanguageCode = _prefs.getString(_languageKey);
     if (savedLanguageCode != null &&
         savedLanguageCode.isNotEmpty &&
         LanguageConstants.isSupported(savedLanguageCode)) {
@@ -20,7 +22,7 @@ class LanguageRepositoryImpl implements LanguageRepository {
   @override
   Future<void> changeLanguage(LanguageEntity language) async {
     if (LanguageConstants.isSupported(language.locale.languageCode)) {
-      await _preferenceRepository.saveLanguage(language.locale.languageCode);
+      await _prefs.setString(_languageKey, language.locale.languageCode);
     } else {
       throw ArgumentError(
         'Unsupported language: ${language.locale.languageCode}',
@@ -35,8 +37,6 @@ class LanguageRepositoryImpl implements LanguageRepository {
 
   @override
   Future<void> resetToDefault() async {
-    await _preferenceRepository.saveLanguage(
-      LanguageConstants.defaultLanguageCode,
-    );
+    await _prefs.setString(_languageKey, LanguageConstants.defaultLanguageCode);
   }
 }

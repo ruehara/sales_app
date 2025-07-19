@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
-import 'app_logger.dart';
+import '../utils/app_logger.dart';
 import 'injection_container.dart';
 
 class AppBlocObserver extends BlocObserver {

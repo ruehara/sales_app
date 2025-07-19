@@ -1,16 +1,18 @@
-import 'package:shared_preference_package/shared_preference_package.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../core/theme_constants.dart';
 import '../domain/entities/theme_entity.dart';
 import '../domain/repositories/theme_repository.dart';
 
 class ThemeRepositoryImpl implements ThemeRepository {
-  const ThemeRepositoryImpl(this._preferenceRepository);
+  const ThemeRepositoryImpl(this._prefs);
 
-  final PreferenceRepository _preferenceRepository;
+  final SharedPreferences _prefs;
+
+  static const String _themeKey = 'user_theme';
 
   @override
   Future<ThemeEntity> getCurrentTheme() async {
-    final savedThemeType = await _preferenceRepository.getTheme();
+    final savedThemeType = _prefs.getString(_themeKey);
     if (savedThemeType != null &&
         savedThemeType.isNotEmpty &&
         ThemeConstants.isSupported(savedThemeType)) {
@@ -22,7 +24,7 @@ class ThemeRepositoryImpl implements ThemeRepository {
   @override
   Future<void> changeTheme(ThemeEntity theme) async {
     if (ThemeConstants.isSupported(theme.type)) {
-      await _preferenceRepository.saveTheme(theme.type);
+      await _prefs.setString(_themeKey, theme.type);
     } else {
       throw ArgumentError('Unsupported theme: ${theme.type}');
     }
@@ -35,6 +37,6 @@ class ThemeRepositoryImpl implements ThemeRepository {
 
   @override
   Future<void> resetToDefault() async {
-    await _preferenceRepository.saveTheme(ThemeConstants.defaultThemeType);
+    await _prefs.setString(_themeKey, ThemeConstants.defaultThemeType);
   }
 }
