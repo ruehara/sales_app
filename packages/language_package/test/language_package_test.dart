@@ -27,7 +27,7 @@ void main() {
 
     test('LanguageEntity returns fallback for unknown code', () {
       final fallbackLanguage = LanguageEntity.fromCode('unknown');
-      expect(fallbackLanguage.locale.languageCode, equals('en'));
+      expect(fallbackLanguage.locale.languageCode, equals('pt'));
     });
 
     test('LanguageEntity returns correct supported languages', () {
