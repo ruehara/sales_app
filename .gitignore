@@ -14,13 +14,12 @@ migrate_working_dir/
 *.iml
 *.ipr
 *.iws
-.idea/*
+**/.idea/*
 
 # Visual Studio Code related
-.classpath
-.project
-.settings/
-.vscode/*
+**/.classpath
+**/.project
+**/.settings/
 
 # packages file containing multi-root paths
 .packages.generated
@@ -28,13 +27,13 @@ migrate_working_dir/
 # Flutter/Dart/Pub related
 **/doc/api/
 **/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
 .packages
-.pub-cache/
-.pub/
-build/
+**/.pub-cache/
+**/.pub/
+**/build/
 flutter_*.png
 linked_*.ds
 unlinked.ds
@@ -112,4 +111,4 @@ app.*.map.json
 !.idea/runConfigurations/
 
 # Generated l10n files
-lib/l10n/gen/
+**/generated/
