@@ -23,7 +23,8 @@
     },
     "editor.formatOnSave": true,
     "files.associations": {
-        "*.arb": "json"
+        "*.arb": "json",
+        "*.drift": "sql"
     },
     "java.compile.nullAnalysis.mode": "automatic",
     "arb-editor.suppressedWarnings": [
